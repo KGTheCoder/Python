@@ -1,3 +1,5 @@
+# Python program to illustrate Function Annotations 
+
 def fib(n: 'int', output:'list'=[]) -> 'list':
     if n == 0:
         return output
