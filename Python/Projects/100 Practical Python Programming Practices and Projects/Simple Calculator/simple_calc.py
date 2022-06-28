@@ -1,8 +1,8 @@
-print("The 'Zero' operator terminates the program")
+print("'End' terminates the program")
 
 while True: 
     o = input("Choose an Operator(+, -, *, /): ")
-    if o == 0:
+    if o == "end" or o == "End":
         break
     if o in ('+', '-', '*', '/'):
         x = float(input("Enter the value of x: "))
