@@ -1,11 +1,9 @@
-x = 12345
-even = 0
-odd = 0
+nums = [0, 2, 1, 5, 3, 4]
 
-if x % 2 == 0:
-    even += 1
-else:
-    odd += 1
-
-print(even, odd)
-print(12345 // 10)
+print(nums[nums[0]])
+print(nums[nums[1]])
+print(nums[nums[2]])
+print(nums[nums[3]])
+print(nums[nums[4]])
+print(nums[nums[5]])
+print(nums[nums[6]])
