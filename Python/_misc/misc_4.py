@@ -1,4 +1,6 @@
-str = "I like pie"
+str = "Hi, welcome to my universe!"
 
-x = str.replace("pie", "candy").replace("sponges", "coffee")
+x = str.find("welcome")
 print(x)
+y = str.find("Hi")
+print(y)
