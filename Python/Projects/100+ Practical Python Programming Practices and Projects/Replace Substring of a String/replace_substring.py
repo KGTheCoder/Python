@@ -9,3 +9,4 @@ while str.find(substr1) > 0:
     i = str.find(substr1)
     str = str[:i] + substr2 + str[i + lensubstr1:]
 print(str)
+print(str.find(substr1))
