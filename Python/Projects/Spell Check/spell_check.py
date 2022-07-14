@@ -1,5 +1,6 @@
 # Import the textblob library 
 from textblob import TextBlob
+from textblob import Word
 
 t = 1
 while t:
@@ -9,8 +10,8 @@ while t:
     print("Original text: "+str(a))     
 
     b = TextBlob(a) 
+    w = Word(a)
 
     # Print the correct spelling of word
     print("Corrected text: "+str(b.correct()))
-    print("Lemmatization: ")
     t = int(input("Try Again? 1 : 0 "))
