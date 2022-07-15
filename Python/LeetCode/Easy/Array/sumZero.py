@@ -26,8 +26,7 @@ class Solution:
         return ans
 
 
-
 sol = Solution()
 # print(sol.sumZero(2))
-print(sol.sumZero_2(3))
+# print(sol.sumZero_2(3))
 # print(sol.sumZero_3(5))
