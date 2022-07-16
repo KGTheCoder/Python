@@ -11,7 +11,7 @@ def is_prime(number):
         if number % i == 0:
             return False
     return True 
-'''
+
 
 # Constant time O(1)
 def OddorEven(n):
@@ -44,3 +44,20 @@ for item in a:
     if item > max_item:
         max_item = item 
 print(max_item)
+
+# Polynomial time O(n^2)
+a = [1, 2, 3, 4, 5, 6, 7, 8, 8, 10]
+for i in a:
+    for x in a:
+        print("x")
+'''
+
+# O(n^3)
+def bubbleSort(arr):
+    n = len(arr)
+
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+
