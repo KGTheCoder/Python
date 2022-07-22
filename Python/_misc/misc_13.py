@@ -35,8 +35,56 @@ dic = {}
 seq = 97
 res = ""
 
+'''
 for c in key:
     if c not in dic and c != " ":
         dic[c] = dic.get(c, 0)
 
 print(dic)
+'''
+
+'''
+for c in key:
+    if c not in dic and c != " ":
+        dic[c] = dic.get(c, 0)
+for v in dic:
+    dic[v] = chr(seq)
+    if seq <= 122:
+        seq += 1
+    else:
+        seq = 97
+
+print(dic)
+
+for c in message:
+    if c == " ":
+        res += " "
+    else:
+        res += dic[c]
+
+print(res)
+'''
+d = {}
+String = ''
+res = ''
+
+for k in key:
+    if k != ' ' and k not in String:
+        String += k
+
+for s in String:
+    print(s)
+
+for i, ch in enumerate(String):
+    if ch not in d:
+        d[ch] = chr(97 + i)
+
+print(d)
+
+for m in message:
+    if m.isalpha():
+        res += d[m]
+    elif m == ' ':
+        res += ' '
+
+print(res)
