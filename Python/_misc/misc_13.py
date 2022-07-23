@@ -31,11 +31,11 @@ for k in key:
 print(hashT)
 '''
 
+'''
 dic = {}
 seq = 97
 res = ""
 
-'''
 for c in key:
     if c not in dic and c != " ":
         dic[c] = dic.get(c, 0)
@@ -64,6 +64,7 @@ for c in message:
 
 print(res)
 '''
+'''
 d = {}
 String = ''
 res = ''
@@ -88,3 +89,5 @@ for m in message:
         res += ' '
 
 print(res)
+'''
+
