@@ -10,7 +10,7 @@ class MovingAverage:
 
         return window_sum / min(len(queue), size)
 
-MA = MovingAverage()
-print(MA.next(3, 3))
+MA = MovingAverage(3)
+print(MA.next(4))
 
 
