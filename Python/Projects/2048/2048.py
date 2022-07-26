@@ -6,7 +6,7 @@ import random
 class Board:
 
     def __init__(self):
-        self.bd = ['']*16
+        self.bd = [''] * 16
         self.goal = 2048
         self.choices = '2222222224'
 
@@ -26,10 +26,10 @@ class Board:
                     [self.bd[8], self.bd[9], self.bd[10], self.bd[11]],
                     [self.bd[12], self.bd[13], self.bd[14], self.bd[15]]]
         else: 
-            rows = [[self.bd[0], self.bd[1], self.bd[2], self.bd[3]],
-                    [self.bd[4], self.bd[5], self.bd[6], self.bd[7]],
-                    [self.bd[8], self.bd[9], self.bd[10], self.bd[11]],
-                    [self.bd[12], self.bd[13], self.bd[14], self.bd[15]]]
+            rows = [[self.bd[0], self.bd[4], self.bd[8], self.bd[12]],
+                    [self.bd[1], self.bd[5], self.bd[9], self.bd[13]],
+                    [self.bd[2], self.bd[6], self.bd[10], self.bd[14]],
+                    [self.bd[3], self.bd[7], self.bd[11], self.bd[15]]]
 
         nrows = []
         for row in rows:
