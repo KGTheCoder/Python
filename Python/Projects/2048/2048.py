@@ -163,7 +163,7 @@ class Game:
         self.cur_goal = StringVar()
         self.goal_cb = ttk.Combobox(self.top_fr,
                                     foreground = self.darkgreen,
-                                    valeus = goals, 
+                                    values = goals, 
                                     font = 'times 12 bold',
                                     justify = 'left',
                                     state = 'readonly',
