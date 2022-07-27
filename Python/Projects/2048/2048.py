@@ -43,7 +43,7 @@ class Board:
             nrows = list(map(list, zip(*nrows)))
         
         newbd = []
-        for row in rows:
+        for row in nrows:
             for r in row:
                 newbd.append(r)
         
@@ -97,7 +97,7 @@ class Game:
         self.springgreen = '#00ff7f'
         self.tomato1 = '#ff6347'
         self.hotpink = '#ff69b4'
-        self.brilliantlavender = '#edcafg6'
+        self.brilliantlavender = '#edcaf6'
         self.cobaltgreen = '#3d9140'
         self.dodgerblue = '#1e90ff'
         self.darkgoldenrod1 = '#ffb90f'
