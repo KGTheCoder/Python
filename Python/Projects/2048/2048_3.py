@@ -30,13 +30,13 @@ class Game(tk.Frame):
         2: "#695c57",
         4: "#695c57",
         8: "#ffffff",
-        16: "ffffff",
-        32: "ffffff",
-        64: "ffffff",
-        128: "ffffff",
-        256: "ffffff",
-        512: "ffffff",
-        2048: "ffffff"
+        16: "#ffffff",
+        32: "#ffffff",
+        64: "#ffffff",
+        128: "#ffffff",
+        256: "#ffffff",
+        512: "#ffffff",
+        2048: "#ffffff"
     }
 
     Fonts_CellNumber = {
@@ -61,7 +61,7 @@ class Game(tk.Frame):
         self.grid_main = tk.Frame (
             self, bg=Game.Color_grid, bd=3, width=600, height=600
         )
-        self.grid_main.grid(pady=(100,0))
+        self.grid_main.grid(pady=(110,0))
 
         self.GUI_maker()
         self.start_game()
@@ -180,7 +180,8 @@ class Game(tk.Frame):
                 else:
                     self.cells[i][j]["frame"].configure(bg=Game.Color_Cells[cell_value])
                     self.cells[i][j]["number"].configure(bg=Game.Color_CellNumber[cell_value],
-                                                        fg=Game.Fonts_CellNumber[cell_value],
+                                                        fg=Game.Color_CellNumber[cell_value],
+                                                        font=Game.Fonts_CellNumber[cell_value],
                                                         text=str(cell_value))
         self.label_score.configure(text=self.score)
         self.update_idletasks()
