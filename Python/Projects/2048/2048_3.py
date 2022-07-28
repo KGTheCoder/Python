@@ -19,11 +19,11 @@ class Game(tk.Frame):
         16: "#f29446",
         32: "#ff775c",
         64: "#e64c2e",
-        128: "#ed3291",
+        128: "#ede291",
         256: "#fce130",
         512: "#ffdb4a",
         1024: "#f0b922",
-        2048: "#fad74d",
+        2048: "#fad74d"
     }
 
     Color_CellNumber = {
