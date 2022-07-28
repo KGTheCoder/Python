@@ -100,3 +100,128 @@ class Game(tk.Frame):
             ).grid(row=0)
             self.label_score = tk.Label(frame_score, text="0", font=Game.Font_Score)
             self.label_score.grid(row=1)
+        
+    def start_game(self):
+        self.matrix = [[0] * 4 for _ in range(4)]
+
+        row = random.randint(0,3)
+        col = random.randint(0,3)
+        self.matrix[row][col] = 2
+        self.cells[row][col]["frame"].configure(bg=Game.Color_Cells[2])
+        self.cells[row][col]["number"].configure(
+            bg=Game.Color_Cells[2],
+            fg=Game.Color_CellNumber[2],
+            font=Game.Fonts_CellNumber[2],
+            text="2"
+        )
+        while(self.matrix[row][col] != 0):
+            row = random.randint(0,3)
+            col = random.randint(0,3)
+        self.matrix[row][col] = 2
+        self.cells[row][col]["frame"].configure(bg=Game.Color_Cells[2])
+        self.cells[row][col]["number"].configure(
+            bg=Game.Color_Cells[2],
+            fg=Game.Color_CellBNumber[2],
+            font=Game.Fonts_CellNumber[2],
+            text="2"
+        )
+
+        self.score = 0
+    
+    def stack(self):
+        Matrix_1 = [[0] * 4 for _ in range(4)]
+        for i in range(4):
+            position_fill = 0
+            for j in range(4):
+                if self.matrix[i][j] != 0:
+                    Matrix_1[i][position_fill] = self.matrix[i][j]
+                    position_fill += 1
+        self.matrix = Matrix_1
+    
+    def combine(self):
+        for i in range(4):
+            for j in range(3):
+                if self.matrix[i][j] != 0 and self.matrix[i][j] == self.matrix[i][j + 1]:
+                    self.matrix[i][j] *= 2
+                    self.matrix[i][j + 1] = 0
+                    self.score += self.matrix[i][j]
+    
+    def reverse(self):
+        Matrix_1 = []
+        for i in range(4):
+            Matrix_1.append([])
+            for j in range(4):
+                Matrix_1[i].append(self.matrix[i][3-j])
+        self.matrix = Matrix_1
+    
+    def transpose(self):
+        Matrix_1 = [[0] * 4 for _ in range(4)]
+        for i in range(4):
+            for j in range(4):
+                Matrix_1[i][j] = self.matrix[j][i]
+        self.matrix = Matrix_1
+
+    def add_title(self):
+        row = random.randint(0,3)
+        col = random.randint(0,3)
+        while(self.matrix[row][col] != 0):
+            row = random.randint(0,3)
+            col = random.randint(0,3)
+        self.matrix[row][col] = random.choice([2,4])
+
+    def GUI_update(self):
+        for i in range(4):
+            for j in range(4):
+                cell_value = self.matrix[i][j]
+                if cell_value == 0:
+                    self.cells[i][j]["frame"].configure(bg=Game.Color_EmptyCell)
+                    self.cells[i][j]["number"].configure(bg=Game.Color_EmptyCell, text="")
+                else:
+                    self.cells[i][j]["frame"].configure(bg=Game.Color_cells[cell_value])
+                    self.cells[i][j]["number"].configure(bg=Game.Color_cells[cell_value],
+                                                        fg=Game.Color_CellNumber[cell_value],
+                                                        text=str(cell_value))
+        self.label_score.configure(text=self.score)
+        self.update_idletasks()
+    
+    def left(self, event):
+        self.stack()
+        self.combine()
+        self.stack()
+        self.add_title()
+        self.GUI_update()
+        self.game_over()
+    
+    def right(self, event):
+        self.reverse()
+        self.stack()
+        self.combine()
+        self.stack()
+        self.reverse()
+        self.add_title()
+        self.GUI_update()
+        self.game_over()
+    
+    def up(self, event):
+        self.transpose()
+        self.stack()
+        self.combine()
+        self.stack()
+        self.transpose()
+        self.add_title()
+        self.GUI_update()
+        self.game_over()
+    
+    def down(self, event):
+        self.transpose()
+        self.reverse()
+        self.stack()
+        self.combine()
+        self.stack()
+        self.reverse()
+        self.transpose()
+        self.add_title()
+        self.GUI_update()
+        self.game_over()
+
+                                
