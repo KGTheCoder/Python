@@ -11,5 +11,8 @@ class MovingAverage:
         return sum(self.window) / len(self.window)
 
 obj = MovingAverage(3)
-param_1 = obj.next(4)
+param_1 = obj.next(1)
+param_1 = obj.next(10)
+param_1 = obj.next(3)
+param_1 = obj.next(5)
 print(param_1)

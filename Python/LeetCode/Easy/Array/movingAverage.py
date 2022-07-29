@@ -20,9 +20,10 @@ class MovingAverage:
         return sum(self.array[-self.size:]) / min(len(self.array), self.size)
 
 MA = MovingAverage(3)
-print(MA.next(1))
-print(MA.next(10))
-print(MA.next(3))
+MA.next(1)
+MA.next(10)
+MA.next(3)
 print(MA.next(5))
+
 
 
