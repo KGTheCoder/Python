@@ -26,6 +26,7 @@ class Solution:
             res.append(res[-1]+nums[i])
         return res
 
+    
 
 sol = Solution()
 print(sol.runningSum_4([1,2,3,4]))
