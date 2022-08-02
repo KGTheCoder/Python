@@ -1,3 +1,4 @@
+"""
 def rotate(L, d, n):
     k = L.index(d)
     new_lis = []
@@ -10,6 +11,20 @@ if __name__ == '__main__':
     size = len(arr)
 
     arr = rotate(arr, d, size)
-    for i in arr:
-        print(i, end=" ")
+    print(arr)
+"""
 
+def rotate(arr, n):
+    x = arr[n - 1]
+
+    for i in range(n - 1, 0, -1):
+        arr[i] = arr[i - 1]
+    arr[0] = x
+
+arr = [1, 2, 3, 4, 5]
+n = len(arr)
+print("Given array: " + str(arr))
+
+rotate(arr, n)
+
+print("\nRotated array: " + str(arr))
