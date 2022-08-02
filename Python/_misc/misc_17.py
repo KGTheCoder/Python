@@ -1,13 +1,21 @@
-size = 3
-window = []
+'''
+s = 'Pizza is healthy for you'
+a = s.split(' ')
+# print(a)
 
-def next(val: int) -> float:
-    if len(window) == size:
-        window.pop(0)
-    window.append(val)
-    return sum(window) /  size
+for i, n in enumerate(a):
+    n = n[::-1]
+    a[i] = n
+s = ' '.join(a)
 
-next(1)
-next(10)
-next(3)
-print(next(5))
+print(s)
+
+s_2 = '1 2 3 4 5 6 7 8 9'
+s_2 = s_2[::-1]
+# print(s_2)
+'''
+
+s = 'I love pasta so much!'
+
+
+
